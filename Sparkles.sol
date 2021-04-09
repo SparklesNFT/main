@@ -3,6 +3,7 @@ pragma solidity 0.6.11;
 contract Sparkles {
   address public owner;
     mapping (address => uint) public SparklesBalances;
+    
     // When 'Sparkles' contract is deployed:
     // 1. set the deploying address as the owner of the contract
     // 2. set the deployed smart contract's Sparkles balance to 100000
@@ -19,11 +20,14 @@ contract Sparkles {
     }
 
     // Allow anyone to purchase sparkles
+    // ICO price???
     function purchase(uint amount) public payable {
         require(msg.value >= amount * 1 Flare , "You must pay at least 1 FLR per cupcake");
         require(SparklesBalances[address(this)] >= amount, "Not enough Sparkles in stock to complete this purchase");
         SparklesBalances[address(this)] -= amount;
         SparklesBalances[msg.sender] += amount;
     }
+    
+    //What token standard do we want to use? or develop our own for COSTON?
 }
 }
