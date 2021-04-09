@@ -20,9 +20,9 @@ contract Sparkles {
     }
 
     // Allow anyone to purchase sparkles
-    // ICO price???
+    
     function purchase(uint amount) public payable {
-        require(msg.value >= amount * 1 Flare , "You must pay at least 1 FLR per cupcake");
+        require(msg.value >= amount * 1 Flare , "You must pay at least 1 FLR per cupcake");  // ICO price???
         require(SparklesBalances[address(this)] >= amount, "Not enough Sparkles in stock to complete this purchase");
         SparklesBalances[address(this)] -= amount;
         SparklesBalances[msg.sender] += amount;
