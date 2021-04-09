@@ -6,7 +6,7 @@ contract Sparkles {
     
     // When 'Sparkles' contract is deployed:
     // 1. set the deploying address as the owner of the contract
-    // 2. set the deployed smart contract's Sparkles balance to 100000
+    // 2. set the deployed smart contract's Sparkles balance to 100000 ***max supply??**
     
     constructor() public {
         owner = msg.sender;
