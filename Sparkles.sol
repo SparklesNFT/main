@@ -1,4 +1,4 @@
-pragma solidity 0.6.11;
+pragma solidity 0.7.11;
 
 contract Sparkles {
   address public owner;
