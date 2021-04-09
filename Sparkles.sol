@@ -2,7 +2,7 @@ pragma solidity 0.6.11;
 
 contract Sparkles {
   address public owner;
-    mapping (address => uint) public SparklesBalances;
+    mapping (address => uint) public SparklesBalances;               // Is Sparkles a good name for the token?
     
     // When 'Sparkles' contract is deployed:
     // 1. set the deploying address as the owner of the contract
