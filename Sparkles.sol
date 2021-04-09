@@ -15,7 +15,7 @@ contract Sparkles {
     // Allow the owner to increase the smart contract's sparkles balance ***("hardcap limit?")***
     function refill(uint amount) public {
         require(msg.sender == owner, "sol contract owner command req ");
-        cupcakeBalances[address(this)] += amount;
+        SparklesBalances[address(this)] += amount;
     }
 
     // Allow anyone to purchase sparkles
