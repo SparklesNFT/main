@@ -2,6 +2,8 @@ pragma solidity 0.7.11;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
+//ERC20 and zeppelin is a place holder
+
 contract MyToken is ERC20 {
     constructor() public ERC20("MyToken", "MTKN"){
         _mint(msg.sender, 1000000000000000000000000);
