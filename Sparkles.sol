@@ -24,6 +24,14 @@ contract MyToken is ERC20 {
         SparklesBalances[msg.sender] += amount;
     }
     
-    //What token standard do we want to use? or develop our own for COSTON?w
+    //What token standard do we want to use? or develop our own for COSTON?
+    
+    function balance() public view returns (uint256) {
+    return token.balanceOf(address(this));
+    }
+
+    
+    
+    
 }
 }
