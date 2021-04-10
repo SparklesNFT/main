@@ -18,7 +18,7 @@ contract MyToken is ERC20 {
     // Allow anyone to purchase sparkles
     
     function purchase(uint amount) public payable {
-        require(msg.value >= amount * 1 Flare , "You must pay at least 1 FLR per sparkle");  // ICO price???
+        require(msg.value >= amount * 1 spark , "You must pay at least 1 FLR per sparkle");  // ICO price???
         require(SparklesBalances[address(this)] >= amount, "Not enough Sparkles in stock to complete this purchase");
         SparklesBalances[address(this)] -= amount;
         SparklesBalances[msg.sender] += amount;
