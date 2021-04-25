@@ -1,15 +1,11 @@
-pragma solidity 0.5.11;
+pragma solidity >=0.6.0 <0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract Marketplace is ERC721 {
 
+   constructor() ERC721("Sparkles", "SPS") {}
 
-    constructor() ERC721() public {
-        name = "main marketplace";
-    }
-
-    string public name;
     mapping(uint => Product) public products;
     uint public productCount = 0;
 
@@ -39,7 +35,7 @@ contract Marketplace is ERC721 {
 
         
 
-        function createProduct(string memory _name, uint _price) public payable {
+        function createProduct(string memory _name, uint _price) external payable {
         // Require a valid name
         require(bytes(_name).length > 0);
         // Require a valid price
@@ -49,13 +45,13 @@ contract Marketplace is ERC721 {
         // Create the product
         products[productCount] = Product(productCount, _name, _price, msg.sender, false);
         _mint(msg.sender, productCount);
+        _setTokenURI(productCount, _name);
         approve(address(this), productCount);
-        //_setTokenURI(newItemId, tokenURI);
         // Trigger an event
         emit ProductCreated(productCount, _name, _price, msg.sender, false);
     }
 
-    function purchaseProduct(uint _id) public payable{
+    function purchaseProduct(uint _id) external payable{
         //fetch the product
         Product memory _product = products[_id];
         //fetch the owner
@@ -75,7 +71,7 @@ contract Marketplace is ERC721 {
         //updrate the product
         products[_id] = _product;
         //payy the seller by sending flare
-        address(_seller).transfer(msg.value);
+        (_seller).transfer(msg.value);
         safeTransferFrom(_seller,msg.sender, _id);
 
         //trigger event
