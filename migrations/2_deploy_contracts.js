@@ -1,4 +1,4 @@
-const Market = artifacts.require("Marketplace.sol");
+const Marketplace = artifacts.require("Marketplace.sol");
 
 module.exports = function (deployer) {
   deployer.deploy(Market);
