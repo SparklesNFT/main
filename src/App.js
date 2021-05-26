@@ -1,10 +1,43 @@
-import React, { Component } from "react";
+import React, { Suspense, Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import styled, { ThemeProvider } from "styled-components";
 import Web3 from "web3";
-import Marketplace from "abis/Marketplace.json";
-import Navbar from "components/Navbar";
+import { routes } from "./utils/routes";
+import Menu from "./components/Menu/Menu";
+import Marketplace from "./abis/Marketplace.json";
+import Button from "./components/Button/Button";
+import {
+  GlobalStyles,
+  lightTheme,
+  darkTheme,
+} from "./resources/Styles/globallStyles";
+
 import Main from "components/Main";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      account: "",
+      productCount: 0,
+      products: [],
+      loading: true,
+      theme: "dark",
+    };
+
+    this.createProduct = this.createProduct.bind(this);
+    this.purchaseProduct = this.purchaseProduct.bind(this);
+  }
+  componentDidMount() {
+    const localStorageTheme = window.localStorage.getItem("theme");
+    localStorageTheme
+      ? this.setState({ theme: localStorageTheme })
+      : this.setMode("light");
+  }
+  setMode = (mode) => {
+    window.localStorage.setItem("theme", mode);
+    this.setState({ theme: mode });
+  };
   async componentWillMount() {
     await this.loadWeb3();
     await this.loadBlockchainData();
@@ -51,18 +84,6 @@ class App extends Component {
     }
   }
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      account: "",
-      productCount: 0,
-      products: [],
-      loading: true,
-    };
-
-    this.createProduct = this.createProduct.bind(this);
-    this.purchaseProduct = this.purchaseProduct.bind(this);
-  }
   createProduct(name, price) {
     this.setState({ loading: true });
     this.state.marketplace.methods
@@ -81,29 +102,54 @@ class App extends Component {
         this.setState({ loading: false });
       });
   }
-
+  themeToggle = () => {
+    this.state.theme === "light" ? this.setMode("dark") : this.setMode("light");
+  };
   render() {
+    const themeMode = this.state.theme === "light" ? lightTheme : darkTheme;
+
     return (
-      <div>
-        <Navbar account={this.state.account} />
-        <div className="container-fluid mt-5">
-          <div className="row">
-            <main role="main" className="col-lg-12 d-flex">
-              {this.state.loading ? (
-                <div id="loader" className="text-center">
-                  <p className="text-center">Loading...</p>
-                </div>
-              ) : (
-                <Main
-                  products={this.state.products}
-                  createProduct={this.createProduct}
-                  purchaseProduct={this.purchaseProduct}
-                />
-              )}
-            </main>
-          </div>
+      <>
+        <div>
+          <ThemeProvider theme={themeMode}>
+            <GlobalStyles />
+            <Router>
+              <Menu />
+              <Button
+                label={this.state.theme}
+                onClick={() => this.themeToggle()}
+              />
+              <Switch>
+                <Suspense fallback={<div>Loading... </div>}>
+                  {routes.map((route, i) => {
+                    return (
+                      <Route
+                        key={i}
+                        path={route.path}
+                        exact={route.exact}
+                        component={route.component}
+                      />
+                    );
+                  })}
+                </Suspense>
+              </Switch>
+            </Router>
+          </ThemeProvider>
+          {/* code below to be moved from this page soon */}
+
+          {/* {this.state.loading ? (
+            <div id="loader" className="text-center">
+              <p className="text-center">Loading...</p>
+            </div>
+          ) : (
+            <Main
+              products={this.state.products}
+              createProduct={this.createProduct}
+              purchaseProduct={this.purchaseProduct}
+            />
+          )} */}
         </div>
-      </div>
+      </>
     );
   }
 }

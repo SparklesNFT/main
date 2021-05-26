@@ -1,0 +1,53 @@
+//https://medium.com/codyhouse/create-your-design-system-part-1-typography-7c630d9092bd
+:root {
+  --grid-gap: 10px;
+}
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(var(--grid-gap) * -1) 0 0 calc(var(--grid-gap) * -1);
+}
+.col {
+  padding: calc(var(--grid-gap)) 0 0 calc(var(--grid-gap));
+  background-clip: content-box;
+  flex-basis: 100%;
+}
+
+$grid-columns: 12;
+
+@function round-width($i) {
+  $width: floor(100 * $i * 100 / $grid-columns) / 100;
+  @return $width#{"%"};
+}
+
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    flex-basis: round-width($i);
+    max-width: round-width($i);
+  }
+}
+@media only screen and (min-width: 767px) {
+  @for $i from 1 through $grid-columns {
+    .col-sm-#{$i} {
+      flex-basis: round-width($i);
+      max-width: round-width($i);
+    }
+  }
+}
+@media only screen and (min-width: 992px) {
+  @for $i from 1 through $grid-columns {
+    .col-md-#{$i} {
+      flex-basis: round-width($i);
+      max-width: round-width($i);
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  @for $i from 1 through $grid-columns {
+    .col-lg-#{$i} {
+      flex-basis: round-width($i);
+      max-width: round-width($i);
+    }
+  }
+}

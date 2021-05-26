@@ -1,0 +1,7 @@
+@import "resources/scss/colors.scss";
+.input-component {
+  padding-top: 10px;
+  input {
+    background: $color-secondary-3;
+  }
+}

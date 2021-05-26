@@ -5,6 +5,13 @@ class Main extends Component {
   render() {
     return (
       <div id="content">
+        <Input />
+        <Button
+          label="click me"
+          type="submit"
+          className="random class that you need for your selectors"
+        />
+
         <h1>Add Product</h1>
         <form
           onSubmit={(event) => {
@@ -17,12 +24,6 @@ class Main extends Component {
             this.props.createProduct(name, price);
           }}
         >
-          <Input />
-          <Button
-            label="click me"
-            type="submit"
-            className="random class that you need for your selectors"
-          />
           <div className="form-group mr-sm-2">
             <input
               id="productName"
