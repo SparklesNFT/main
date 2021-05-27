@@ -22,14 +22,17 @@ const ComponentPage = () => {
             <div className="text-container">
               <h2>HEADER</h2>
               <p>
-                <a>LINK</a> <b>paragraph</b> luis alves paragraph, paragraph
-                paragraph luis alves paragraph, paragraph paragraph luis alves
-                paragraph, paragraph paragraph luis alves paragraph, paragraph
-                paragraph luis alves paragraph, paragraph paragraph luis alves
-                paragraph, paragraph paragraph luis alves paragraph, paragraph
-                paragraph luis alves paragraph, paragraph paragraph luis alves
-                paragraph, paragraph paragraph luis alves paragraph, paragraph
-                paragraph luis alves paragraph
+                <a href="/" rel="noopener noreferrer">
+                  LINK
+                </a>{" "}
+                <b>paragraph</b> luis alves paragraph, paragraph paragraph luis
+                alves paragraph, paragraph paragraph luis alves paragraph,
+                paragraph paragraph luis alves paragraph, paragraph paragraph
+                luis alves paragraph, paragraph paragraph luis alves paragraph,
+                paragraph paragraph luis alves paragraph, paragraph paragraph
+                luis alves paragraph, paragraph paragraph luis alves paragraph,
+                paragraph paragraph luis alves paragraph, paragraph paragraph
+                luis alves paragraph
               </p>
             </div>
           </div>
@@ -37,14 +40,14 @@ const ComponentPage = () => {
             <div className="text-container">
               <h2>HEADER</h2>
               <p>
-                <a>LINK</a> <b>paragraph</b> luis alves paragraph, paragraph
-                paragraph luis alves paragraph, paragraph paragraph luis alves
-                paragraph, paragraph paragraph luis alves paragraph, paragraph
-                paragraph luis alves paragraph, paragraph paragraph luis alves
-                paragraph, paragraph paragraph luis alves paragraph, paragraph
-                paragraph luis alves paragraph, paragraph paragraph luis alves
-                paragraph, paragraph paragraph luis alves paragraph, paragraph
-                paragraph luis alves paragraph
+                <b>paragraph</b> luis alves paragraph, paragraph paragraph luis
+                alves paragraph, paragraph paragraph luis alves paragraph,
+                paragraph paragraph luis alves paragraph, paragraph paragraph
+                luis alves paragraph, paragraph paragraph luis alves paragraph,
+                paragraph paragraph luis alves paragraph, paragraph paragraph
+                luis alves paragraph, paragraph paragraph luis alves paragraph,
+                paragraph paragraph luis alves paragraph, paragraph paragraph
+                luis alves paragraph
               </p>
             </div>
           </div>
@@ -52,14 +55,14 @@ const ComponentPage = () => {
             <div className="text-container">
               <h2>HEADER</h2>
               <p>
-                <a>LINK</a> <b>paragraph</b> luis alves paragraph, paragraph
-                paragraph luis alves paragraph, paragraph paragraph luis alves
-                paragraph, paragraph paragraph luis alves paragraph, paragraph
-                paragraph luis alves paragraph, paragraph paragraph luis alves
-                paragraph, paragraph paragraph luis alves paragraph, paragraph
-                paragraph luis alves paragraph, paragraph paragraph luis alves
-                paragraph, paragraph paragraph luis alves paragraph, paragraph
-                paragraph luis alves paragraph
+                <b>paragraph</b> luis alves paragraph, paragraph paragraph luis
+                alves paragraph, paragraph paragraph luis alves paragraph,
+                paragraph paragraph luis alves paragraph, paragraph paragraph
+                luis alves paragraph, paragraph paragraph luis alves paragraph,
+                paragraph paragraph luis alves paragraph, paragraph paragraph
+                luis alves paragraph, paragraph paragraph luis alves paragraph,
+                paragraph paragraph luis alves paragraph, paragraph paragraph
+                luis alves paragraph
               </p>
             </div>
           </div>
@@ -67,14 +70,14 @@ const ComponentPage = () => {
             <div className="text-container">
               <h2>HEADER</h2>
               <p>
-                <a>LINK</a> <b>paragraph</b> luis alves paragraph, paragraph
-                paragraph luis alves paragraph, paragraph paragraph luis alves
-                paragraph, paragraph paragraph luis alves paragraph, paragraph
-                paragraph luis alves paragraph, paragraph paragraph luis alves
-                paragraph, paragraph paragraph luis alves paragraph, paragraph
-                paragraph luis alves paragraph, paragraph paragraph luis alves
-                paragraph, paragraph paragraph luis alves paragraph, paragraph
-                paragraph luis alves paragraph
+                <b>paragraph</b> luis alves paragraph, paragraph paragraph luis
+                alves paragraph, paragraph paragraph luis alves paragraph,
+                paragraph paragraph luis alves paragraph, paragraph paragraph
+                luis alves paragraph, paragraph paragraph luis alves paragraph,
+                paragraph paragraph luis alves paragraph, paragraph paragraph
+                luis alves paragraph, paragraph paragraph luis alves paragraph,
+                paragraph paragraph luis alves paragraph, paragraph paragraph
+                luis alves paragraph
               </p>
             </div>
           </div>
@@ -93,6 +96,7 @@ const ComponentPage = () => {
             <Button label="large" secondary lg />
           </div>
           <div className="col col-sm-12 ">
+            {/* add variables for margins like : m-t-x m-b-x m-l-x m-r-x */}
             <Button label="full" secondary full />
           </div>
         </div>

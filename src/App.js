@@ -1,6 +1,6 @@
 import React, { Suspense, Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import styled, { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import Web3 from "web3";
 import { routes } from "./utils/routes";
 import Menu from "./components/Menu/Menu";
@@ -12,7 +12,7 @@ import {
   darkTheme,
 } from "./resources/Styles/globallStyles";
 
-import Main from "components/Main";
+// import Main from "components/Main";
 
 class App extends Component {
   constructor(props) {
