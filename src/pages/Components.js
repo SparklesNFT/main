@@ -79,7 +79,23 @@ const ComponentPage = () => {
             </div>
           </div>
         </div>
-        <Button label="Browser" secondary md />
+        <div className="flex-grid">
+          <div className="col col-sm-12 ">
+            <Button label="this one grows with the text" secondary />
+          </div>
+          <div className="col col-sm-12 ">
+            <Button label="small" secondary sm />
+          </div>
+          <div className="col col-sm-12 ">
+            <Button label="medium" secondary md />
+          </div>
+          <div className="col col-sm-12 ">
+            <Button label="large" secondary lg />
+          </div>
+          <div className="col col-sm-12 ">
+            <Button label="full" secondary full />
+          </div>
+        </div>
       </div>
     </>
   );

@@ -16,7 +16,7 @@ export const ButtonWrapper = styled.button`
   width: auto;
   height: 50px;
   padding: 3px 30px;
-  ${({ sm, md, lg }) => {
+  ${({ sm, md, lg, full }) => {
     if (sm) {
       return css`
         width: 100px;
@@ -30,6 +30,11 @@ export const ButtonWrapper = styled.button`
     if (lg) {
       return css`
         width: 300px;
+      `;
+    }
+    if (full) {
+      return css`
+        width: 100%;
       `;
     }
   }}
