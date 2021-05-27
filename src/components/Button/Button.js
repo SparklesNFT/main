@@ -1,12 +1,12 @@
 import React from "react";
-import "./Button.scss";
+import { ButtonWrapper } from "./Button-style";
 
 const Button = ({ label, type = "text", className, onClick, ...props }) => {
   return (
     <>
-      <button className={`btn ${className}`} type={type} onClick={onClick}>
+      <ButtonWrapper type={type} onClick={onClick} {...props}>
         {label}
-      </button>
+      </ButtonWrapper>
     </>
   );
 };

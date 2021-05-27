@@ -34,13 +34,7 @@ a{
         color:${({ theme }) => theme.aVisited};
     }
 }
-.btn{
-    background:${({ theme }) => theme.button.primary};
-    color:${({ theme }) => theme.text};
-        &:hover{
-            background:${({ theme }) => theme.button.error};
-        }
-    }
+
 `;
 
 export const lightTheme = {
@@ -55,8 +49,19 @@ export const lightTheme = {
   a: "#0000f0",
   aVisited: "#1a0057",
   button: {
-    primary: "#15abff",
-    warning: "yellow",
+    primary: {
+      backGroundColor: "#CE8FFF",
+      textColor: "white",
+      hover: "#B85CFF",
+      active: "#AF47FF",
+    },
+    secondary: {
+      backGroundColor: "#EBEDF0",
+      textColor: "black",
+      hover: "#99A4B2",
+      active: "#4F5A68",
+    },
+    warning: "gold",
     error: "red",
     success: "green",
   },
@@ -74,7 +79,18 @@ export const darkTheme = {
   a: "#15ABFF",
   aVisited: "#3d00cc",
   button: {
-    primary: "#15abff",
+    primary: {
+      backGroundColor: "#A229FF",
+      textColor: "white",
+      hover: "#8B00F5",
+      active: "#7F00E0",
+    },
+    secondary: {
+      backGroundColor: "#4F5A68",
+      textColor: "white",
+      hover: "#485360",
+      active: "#424B57",
+    },
     warning: "gold",
     error: "red",
     success: "green",

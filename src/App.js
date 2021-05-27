@@ -116,6 +116,7 @@ class App extends Component {
             <Router>
               <Menu />
               <Button
+                primary
                 label={this.state.theme}
                 onClick={() => this.themeToggle()}
               />

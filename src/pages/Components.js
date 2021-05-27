@@ -79,9 +79,13 @@ const ComponentPage = () => {
             </div>
           </div>
         </div>
-        <Button label="Browse" />
+        <Button label="Browser" secondary md />
       </div>
     </>
   );
 };
 export default ComponentPage;
+
+// all variants possible
+// button size:sm,md,lg(optional) by default will grow as it needs
+// colors: primary,secondary,warning,success,error
